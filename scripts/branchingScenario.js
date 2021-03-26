@@ -14,7 +14,7 @@ H5P.BranchingScenario = function (params, contentId) {
   self.xAPIDataCollector = [];
   self.userPath = [];
   self.backwardsAllowedFlags = [];
-  self.enableTimer = 0;
+  self.timerLength = 0;
   self.proceedButtonInProgress = false;
 
   /**
