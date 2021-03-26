@@ -27,6 +27,10 @@ H5PUpgrades['H5P.BranchingScenario'] = (function () {
           if (typeof contentNode.contentBehaviour === 'undefined') {
             contentNode.contentBehaviour = false;
           }
+          
+          if (typeof contentNode.timerBehaviour === 'undefined') {
+            contentNode.timerBehaviour = false;
+          }
         });
 
         // Global backwards navigation default value, mind the one-item behavior of semantics groups
@@ -59,6 +63,14 @@ H5PUpgrades['H5P.BranchingScenario'] = (function () {
             // Allow BQ to have content behaviour
             if (contentNode.type.library.split(' ')[0] === 'H5P.BranchingQuestion') {
               contentNode.contentBehaviour = true;
+            }
+          }
+          
+          if (typeof contentNode.timerBehaviour === 'undefined') {
+            contentNode.timerBehaviour = false;
+            // Allow BQ to have timer behaviour
+            if (contentNode.type.library.split(' ')[0] === 'H5P.BranchingQuestion') {
+              contentNode.timerBehaviour = true;
             }
           }
         });

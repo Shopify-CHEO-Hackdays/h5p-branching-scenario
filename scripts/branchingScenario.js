@@ -14,6 +14,7 @@ H5P.BranchingScenario = function (params, contentId) {
   self.xAPIDataCollector = [];
   self.userPath = [];
   self.backwardsAllowedFlags = [];
+  self.enableTimer = 0;
   self.proceedButtonInProgress = false;
 
   /**
@@ -82,6 +83,12 @@ H5P.BranchingScenario = function (params, contentId) {
       return params.behaviour.enableBackwardsNavigation;
     }
     return content.contentBehaviour === 'enabled' ? true : false;
+  });
+  
+  self.timerLength = params.content.map( content => {
+    if (content.timerBehaviour) {
+      return params.behaviour.enableTimer;
+    }
   });
 
   self.params = params;
@@ -162,6 +169,10 @@ H5P.BranchingScenario = function (params, contentId) {
    * Handle the start of the branching scenario
    */
   self.on('started', function () {
+    myTimer = H5P.Timer(100);
+    console.log("Logging hereeeee");
+    console.log("TIMER: ", myTimer);
+  
     const startNode = this.params.content[0];
 
     // Disable back button if not allowed

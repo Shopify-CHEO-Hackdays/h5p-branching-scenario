@@ -239,6 +239,14 @@
               ]
             },
             {
+              "name": "timerBehaviour",
+              "label": "Timed Question",
+              "type": "number",
+              "description": "Seconds user has to answer question",
+              "default": null,
+              "optional": true
+            },
+            {
               "name": "contentBehaviour",
               "label": "Navigate back",
               "type": "select",
@@ -310,6 +318,14 @@
             "label": "Required to watch",
             "description": "Urges viewers to complete the Video, Interactive Vdeo and Course Presentation before proceeding with the scenario. This can be overridden on a content level",
             "type": "boolean",
+            "optional": true,
+            "default": false
+          },
+          {
+            "name": "enableTimer",
+            "label": "Timed Question",
+            "description": "Gives user limited amount of time to answer question.",
+            "type": "number",
             "optional": true,
             "default": false
           }
